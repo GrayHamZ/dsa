@@ -131,7 +131,7 @@ void delete(Dictionary D, int data) {
     Nodetype *trav;
 
     for(trav = &D[index]; *trav != NULL && (*trav)->data != data; trav = &(*trav)->next) {}
-
+    
     if(*trav != NULL) {
         Nodetype temp = *trav;
         *trav = temp->next;

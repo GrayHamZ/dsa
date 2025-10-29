@@ -153,7 +153,8 @@ int main(void)
     printf("\n------------\n");
 	studSet* S = removeInactiveStudents(D);
 	displayDCISMDict(D);
-	displayStudSets(S); 
+	displayStudSets(S);
+    printf("count %d", S[1]->count);
     
     return 0;
 }                                  
@@ -208,7 +209,7 @@ char* getProgram(personalInfo I)
   //Write your code here   
     char tempProgram[5];
 
-    int p = I & 3;
+    int p = I & 0b00000011;
 
     if(p == 0) { // 00
         strcpy(tempProgram, "CS");

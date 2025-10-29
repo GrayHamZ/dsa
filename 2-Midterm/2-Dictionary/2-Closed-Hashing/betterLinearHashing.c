@@ -68,6 +68,8 @@ void insert(Dictionary D, int data) {
     int stop = (temp + MAX - 1) % MAX;
 
     int i;
+    // stop conditions: if index is == to stop, if D[i] is empty, and if D[i] is equal to the data
+    
     for(i = temp; i != stop && D[i] != EMPTY && D[i] != data; i = (i + 1) % MAX) {
         if(firstAvail == -1 && D[i] == DELETED) {
             firstAvail = i;
