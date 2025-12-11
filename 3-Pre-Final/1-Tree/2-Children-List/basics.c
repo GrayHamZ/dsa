@@ -29,7 +29,7 @@ int main() {
     insertTree(T + root, 1);
 
     // make 2 a child of 1
-    insertTree(T + 1, 2);
+    insertTree(&(T)[1], 2);
 
     // make 3 a child of 0
     insertTree(T + root, 3);

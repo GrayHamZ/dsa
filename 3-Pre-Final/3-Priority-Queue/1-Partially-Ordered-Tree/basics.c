@@ -17,7 +17,7 @@ void displayTree(Tree T);
 
 int main() {
     Tree T;
-	int arr[] = {4, 2, 5, 2, 1};
+	int arr[] = {4, 2, 5, 2, 1, 6, 10, 13, 3, 8};
 	int size = sizeof(arr) / sizeof(arr[0]);
 
     initTree(&T);

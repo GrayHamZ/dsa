@@ -17,7 +17,7 @@ void displayTree(MinHeap T);
 
 int main() {
     MinHeap T;
-	int arr[] = {4, 2, 5, 2, 1};
+	int arr[] = {5,3,6,2,4};
 	int size = sizeof(arr) / sizeof(arr[0]);
 
     initTree(&T);
@@ -61,7 +61,6 @@ int deleteMin(MinHeap *T) {
     if(T->lastIndex >= 0) {
         temp = T->elements[0];
         int data = T->elements[T->lastIndex--];
-
         int parent = 0;
         int LC = parent * 2 + 1;
         int RC = LC + 1;

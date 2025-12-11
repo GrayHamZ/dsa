@@ -75,7 +75,26 @@ int main() {
 // Function to maintain the heap property by heapifying the subtree rooted at index i
 void heapify(MinHeap* pq, int i) {
     // To do code logic here
-    
+    int smallest = i;
+    int left = (2 * i) + 1;
+    int right = (2 * i) + 2;
+
+    if (left < pq->size && pq->heap[left].duration < pq->heap[smallest].duration) {
+        smallest = left;
+    }
+
+    if (right < pq->size && pq->heap[right].duration < pq->heap[smallest].duration) {
+        smallest = right;
+    }
+
+    if (smallest != i) {
+        //swap the index with the smallest
+        int temp = pq->heap[i].duration;
+        pq->heap[i].duration = pq->heap[smallest].duration;
+        pq->heap[smallest].duration = temp;
+
+        heapify(pq, smallest);
+    }
 }
 
 

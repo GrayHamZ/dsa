@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#define MAX 10
+#define MAX 20
 
 // prioritized by elements
 typedef struct {
@@ -17,11 +17,12 @@ void displayTree(MaxHeap T);
 
 int main() {
     MaxHeap T;
-	int arr[] = {4, 2, 5, 2, 1};
+	int arr[] = {4, 2, 5, 2, 1, 6, 10, 13, 3, 8, 9, 25};
 	int size = sizeof(arr) / sizeof(arr[0]);
 
     initTree(&T);
 	populateTree(&T, arr, size);
+    // displayTree(T);
 
     printf("Elements in order: ");
     displayTree(T);
@@ -76,7 +77,7 @@ int deleteMax(MaxHeap *T) {
             parent = child;
             LC = parent * 2 + 1;
             RC = LC + 1;
-            child = T->elements[LC] < T->elements[RC] ? LC : RC;
+            child = T->elements[LC] > T->elements[RC] ? LC : RC;
         }
 
         T->elements[parent] = data; // data is stored in its proper position
